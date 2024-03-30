@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Elevate Your Ride: Your Snowboard Decision Guide.">
+    <meta name="keywords" content="snowboarding, sports, snow, snowboard, gear">
+
+    <title>Snowboard Guide</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+    <link rel="preload" fetchpriority="high" as="image" href="assets/images/illustrated-snow-background.webp"
+        type="image/webp">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="assets/images/snowboard-logo.png" alt="Snowboard Guide Logo" id="logo">
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label"><span class="visually-hidden">Toggle Navigation</span>
+            <span><i class="fa-solid fa-bars"></i></span></label>
+
+
+        <nav>
+            <ul id="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gear-guru.html">Gear Guru</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- hero header -->
+    <main>
+        <section id="hero">
+            <div class="hero-text">
+                <h1>Contact</h1>
+                <h2>The Snowboard Guide</h2>
+                <p>Elevate Your Ride: Your Snowboard Decision Guide. </p>
+            </div>
+        </section>
+
+        <!-- contact form -->
+        <section id="contact">
+            <div class="center">
+                <h2 class="hidden">Contact Form</h2>
+                <form action="https://formdump.codeinstitute.net" method="post">
+                    <label class="visually-hidden" for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+
+                    <label class="visually-hidden" for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+
+                    <label class="visually-hidden" for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Message" required></textarea>
+
+                    <input id="submit" type="submit" value="SEND">
+                </form>
+
+                <!-- openstreetmap -->
+                <div id="map"></div>
+
+                <!-- Javascript for map -->
+                <script>
+                    var mymap = L.map('map').setView([47.4398, 11.7137], 13);
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                        { subdomains: ['a', 'b', 'c'] })
+                        .addTo(mymap);
+
+                    var customMarker = L.marker([47.4398, 11.7137]).addTo(mymap)
+                        .bindPopup('Your Custom Marker');
+                </script>
+
+                <!-- My contact -->
+                <div id="mydata">
+                    <p>Address: <br>
+                        The Snowboard Guide <br>
+                        Achenseestraße 1 <br>
+                        6213 Pertisau <br>
+                        Austria <br>
+                        <br>
+                        Phone: +43 650 123456 <br>
+                        Email: nothinspecial@snowboard.org
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a id="social-network" href="https://www.instagram.com/actionsportclub_achensee/" target="_blank"
+                    rel="noopener">
+                    <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    <span class="visually-hidden">Instagram</span>
+                </a></li>
+            <li>&copy; 2024 The Snowboard Guide. All rights reserved.</li>
+
+            <li><a href="https://asc-achensee.at" target="_blank">Supporters</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </footer>
+
+
+
+
+    <script src="https://kit.fontawesome.com/29f2fad7e0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
