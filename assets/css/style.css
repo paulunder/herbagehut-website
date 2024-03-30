@@ -237,6 +237,7 @@ main {
     animation-name: ticker;
     -webkit-animation-duration: 30s;
     animation-duration: 30s;
+
 }
 
 .ticker-wrap .ticker__item {
